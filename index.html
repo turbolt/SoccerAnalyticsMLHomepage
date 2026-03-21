@@ -1,0 +1,915 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 
+    - primary meta tags
+  -->
+    <title>Soccer Analytics with Machine Learning</title>
+    <meta name="title" content="Soccer Analytics with Machine Learning" />
+    <meta
+      name="description"
+      content="A practical O'Reilly guide to soccer analytics, machine learning, Python, predictive modeling, and companion notebooks."
+    />
+
+    <!-- 
+    - favicon
+  -->
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+
+    <!-- 
+    - custom css link
+  -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 
+    - preload image
+  -->
+    <link rel="preload" as="image" href="./assets/images/book-cover.png" />
+  </head>
+
+  <body>
+    <!-- 
+    - #HEADER
+  -->
+
+    <header class="header" data-header>
+      <div class="container">
+        <a href="#" class="logo">Soccer Analytics with Machine Learning</a>
+
+        <nav class="navbar" data-navbar>
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <a href="#benefits" class="navbar-link" data-nav-link
+                >Highlights</a
+              >
+            </li>
+
+            <li class="navbar-item">
+              <a href="#chapters" class="navbar-link" data-nav-link>Chapters</a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="#pricing" class="navbar-link" data-nav-link>Book</a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="#achievements" class="navbar-link" data-nav-link>Why</a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <button
+          class="nav-toggle-btn"
+          aria-label="toggle menu"
+          data-nav-toggler
+        >
+          <ion-icon
+            name="menu-outline"
+            aria-hidden="true"
+            class="open"
+          ></ion-icon>
+
+          <ion-icon
+            name="close-outline"
+            aria-hidden="true"
+            class="close"
+          ></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <article>
+        <!-- 
+        - #HERO
+      -->
+
+        <section class="section hero" id="home" aria-label="home">
+          <div class="container">
+            <div class="hero-content">
+              <p class="section-subtitle">O'Reilly Book</p>
+
+              <h1 class="h1 hero-title">
+                Soccer Analytics with Machine Learning
+              </h1>
+
+              <p class="section-text">
+                A practical guide for soccer fans, analysts, and data scientists
+                who want to learn machine learning through real soccer data.
+              </p>
+            </div>
+
+            <div class="hero-banner has-before">
+              <a
+                href="https://www.amazon.com/Soccer-Analytics-Machine-Learning-Predictive/dp/1098181115"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Buy Soccer Analytics with Machine Learning on Amazon"
+              >
+                <img
+                  src="./assets/images/book-cover.png"
+                  width="431"
+                  height="596"
+                  alt="Soccer Analytics with Machine Learning book cover"
+                  class="w-100"
+                />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- 
+        - #BENEFITS
+      -->
+
+        <section class="section benefits" id="benefits" aria-label="benefits">
+          <div class="container">
+            <div class="grid-list">
+              <li class="benefits-content">
+                <h2 class="h2 section-title">
+                  What you'll gain from this book
+                </h2>
+
+                <p class="section-text">
+                  Learn how to turn soccer data into insights, predictions, and
+                  practical machine learning workflows.
+                </p>
+              </li>
+
+              <li>
+                <div class="benefits-card has-before has-after">
+                  <div class="card-icon">
+                    <img
+                      src="./assets/images/benefits-1.svg"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                      alt="Experience"
+                    />
+                  </div>
+
+                  <h3 class="h3 card-title">Python Foundations</h3>
+
+                  <p class="card-text">
+                    Build the programming and data analysis skills needed to
+                    work confidently with soccer analytics projects.
+                  </p>
+
+                  <a href="#" class="btn-link">
+                    <span class="span">Chapter 2</span>
+
+                    <ion-icon
+                      name="chevron-forward-outline"
+                      aria-hidden="true"
+                    ></ion-icon>
+                  </a>
+                </div>
+              </li>
+
+              <li>
+                <div class="benefits-card has-before has-after">
+                  <div class="card-icon">
+                    <img
+                      src="./assets/images/benefits-2.svg"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                      alt="Motivation"
+                    />
+                  </div>
+
+                  <h3 class="h3 card-title">Exploratory Analysis</h3>
+
+                  <p class="card-text">
+                    Understand match, event, and player data through
+                    visualization, summary statistics, and soccer-specific
+                    examples.
+                  </p>
+
+                  <a href="#" class="btn-link">
+                    <span class="span">Chapter 3</span>
+
+                    <ion-icon
+                      name="chevron-forward-outline"
+                      aria-hidden="true"
+                    ></ion-icon>
+                  </a>
+                </div>
+              </li>
+
+              <li>
+                <div class="benefits-card has-before has-after">
+                  <div class="card-icon">
+                    <img
+                      src="./assets/images/benefits-3.svg"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                      alt="Goals"
+                    />
+                  </div>
+
+                  <h3 class="h3 card-title">Predictive Modeling</h3>
+
+                  <p class="card-text">
+                    Learn classification and regression techniques for match
+                    outcomes, scoring, and performance analysis.
+                  </p>
+
+                  <a href="#" class="btn-link">
+                    <span class="span">Chapters 4-6</span>
+
+                    <ion-icon
+                      name="chevron-forward-outline"
+                      aria-hidden="true"
+                    ></ion-icon>
+                  </a>
+                </div>
+              </li>
+
+              <li>
+                <div class="benefits-card has-before has-after">
+                  <div class="card-icon">
+                    <img
+                      src="./assets/images/benefits-4.svg"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                      alt="Vision"
+                    />
+                  </div>
+
+                  <h3 class="h3 card-title">Deep Learning</h3>
+
+                  <p class="card-text">
+                    Move from intuition to implementation with neural networks
+                    and modern modeling workflows for soccer problems.
+                  </p>
+
+                  <a href="#" class="btn-link">
+                    <span class="span">Chapter 7</span>
+
+                    <ion-icon
+                      name="chevron-forward-outline"
+                      aria-hidden="true"
+                    ></ion-icon>
+                  </a>
+                </div>
+              </li>
+
+              <li>
+                <div class="benefits-card has-before has-after">
+                  <div class="card-icon">
+                    <img
+                      src="./assets/images/benefits-5.svg"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                      alt="Mission"
+                    />
+                  </div>
+
+                  <h3 class="h3 card-title">Feature Engineering</h3>
+
+                  <p class="card-text">
+                    Discover how domain knowledge and thoughtful data
+                    representation can unlock stronger model performance.
+                  </p>
+
+                  <a href="#" class="btn-link">
+                    <span class="span">Chapter 8</span>
+
+                    <ion-icon
+                      name="chevron-forward-outline"
+                      aria-hidden="true"
+                    ></ion-icon>
+                  </a>
+                </div>
+              </li>
+
+              <li>
+                <div class="benefits-card has-before has-after">
+                  <div class="card-icon">
+                    <img
+                      src="./assets/images/benefits-6.svg"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                      alt="Strategy"
+                    />
+                  </div>
+
+                  <h3 class="h3 card-title">Decision Making</h3>
+
+                  <p class="card-text">
+                    Connect predictions to betting, optimization, evaluation,
+                    and the future direction of soccer analytics.
+                  </p>
+
+                  <a href="#" class="btn-link">
+                    <span class="span">Chapters 9-10</span>
+
+                    <ion-icon
+                      name="chevron-forward-outline"
+                      aria-hidden="true"
+                    ></ion-icon>
+                  </a>
+                </div>
+              </li>
+            </div>
+          </div>
+        </section>
+
+        <!-- 
+        - #CHAPTERS
+      -->
+
+        <section class="section chapters" id="chapters">
+          <div class="container">
+            <p class="section-subtitle">Chapters</p>
+
+            <h2 class="h2 section-title has-underline">
+              What the book covers
+              <span class="span has-before"></span>
+            </h2>
+
+            <ul class="grid-list">
+              <li>
+                <div class="chapter-card">
+                  <p class="card-subtitle">Chapter 01</p>
+
+                  <h3 class="h3 card-title">The Soccer Analytics Landscape</h3>
+
+                  <p class="card-text">
+                    An introduction to the field, the data ecosystem, and why
+                    soccer is such a compelling domain for analytics.
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <div class="chapter-card">
+                  <p class="card-subtitle">Chapter 02</p>
+
+                  <h3 class="h3 card-title">Python Fundamentals</h3>
+
+                  <p class="card-text">
+                    Core Python skills for analysis, data wrangling, and
+                    reproducible workflows.
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <div class="chapter-card">
+                  <p class="card-subtitle">Chapter 03</p>
+
+                  <h3 class="h3 card-title">
+                    Exploratory Data Analysis in Soccer
+                  </h3>
+
+                  <p class="card-text">
+                    Practical tools for understanding event data, team behavior,
+                    and player tendencies.
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <div class="chapter-card">
+                  <p class="card-subtitle">Chapter 04</p>
+
+                  <h3 class="h3 card-title">Predicting Soccer Outcomes</h3>
+
+                  <p class="card-text">
+                    Classification methods for forecasting match outcomes and
+                    related soccer events.
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <div class="chapter-card">
+                  <p class="card-subtitle">Chapter 05</p>
+
+                  <h3 class="h3 card-title">Advanced Classification Methods</h3>
+
+                  <p class="card-text">
+                    More powerful models and evaluation strategies for applied
+                    soccer prediction tasks.
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <div class="chapter-card">
+                  <p class="card-subtitle">Chapter 06</p>
+
+                  <h3 class="h3 card-title">Regression Techniques</h3>
+
+                  <p class="card-text">
+                    Methods for modeling goals, performance metrics, and
+                    continuous outcomes in soccer analytics.
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <div class="chapter-card">
+                  <p class="card-subtitle">Chapter 07</p>
+
+                  <h3 class="h3 card-title">
+                    Deep Learning for Soccer Analytics
+                  </h3>
+
+                  <p class="card-text">
+                    Neural network concepts, implementation ideas, and practical
+                    challenges in real applications.
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <div class="chapter-card">
+                  <p class="card-subtitle">Chapter 08</p>
+
+                  <h3 class="h3 card-title">
+                    Feature Engineering for Soccer Analytics
+                  </h3>
+
+                  <p class="card-text">
+                    How to create better signals from raw soccer data using
+                    context and domain expertise.
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <div class="chapter-card">
+                  <p class="card-subtitle">Chapter 09</p>
+
+                  <h3 class="h3 card-title">
+                    From Predictions to Potential Profit
+                  </h3>
+
+                  <p class="card-text">
+                    A bridge from predictive models to evaluation, optimization,
+                    and responsible betting strategy.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 
+        - #PRICING
+      -->
+
+        <section class="section pricing" id="pricing" aria-label="pricing">
+          <div class="container">
+            <p class="section-subtitle">Get The Book</p>
+
+            <h2 class="h2 section-title has-underline">
+              Where to read and explore more
+              <span class="span has-before"></span>
+            </h2>
+
+            <ul class="grid-list">
+              <li>
+                <div class="pricing-card">
+                  <h3 class="h3 card-title">Amazon</h3>
+
+                  <data class="price" value="1">Buy</data>
+
+                  <ul class="pricing-card-list">
+                    <li class="card-item">
+                      <p class="card-text">Print and Kindle availability</p>
+                    </li>
+
+                    <li class="card-item">
+                      <p class="card-text">Official retail listing</p>
+                    </li>
+
+                    <li class="card-item">
+                      <p class="card-text">Great for direct purchase</p>
+                    </li>
+
+                    <li class="card-item">
+                      <p class="card-text">Easy sharing with readers</p>
+                    </li>
+                  </ul>
+
+                  <a
+                    href="https://www.amazon.com/Soccer-Analytics-Machine-Learning-Predictive/dp/1098181115"
+                    class="btn btn-secondary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >BUY NOW</a
+                  >
+                </div>
+              </li>
+
+              <li>
+                <div class="pricing-card bundle">
+                  <h3 class="h3 card-title">O'Reilly</h3>
+
+                  <data class="price" value="2">Read</data>
+
+                  <ul class="pricing-card-list">
+                    <li class="card-item">
+                      <p class="card-text">Read through O'Reilly Learning</p>
+                    </li>
+
+                    <li class="card-item">
+                      <p class="card-text">Ideal for online access</p>
+                    </li>
+
+                    <li class="card-item">
+                      <p class="card-text">Useful for teams and subscribers</p>
+                    </li>
+
+                    <li class="card-item">
+                      <p class="card-text">Direct publisher platform</p>
+                    </li>
+                  </ul>
+
+                  <a
+                    href="https://learning.oreilly.com/library/view/soccer-analytics-with/9781098181109/"
+                    class="btn btn-primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >READ NOW</a
+                  >
+                </div>
+              </li>
+
+              <li>
+                <div class="pricing-card">
+                  <h3 class="h3 card-title">Companion Code</h3>
+
+                  <data class="price" value="3">Code</data>
+
+                  <ul class="pricing-card-list">
+                    <li class="card-item">
+                      <p class="card-text">Official Jupyter notebooks</p>
+                    </li>
+
+                    <li class="card-item">
+                      <p class="card-text">Supplementary materials</p>
+                    </li>
+
+                    <li class="card-item">
+                      <p class="card-text">Chapter-by-chapter examples</p>
+                    </li>
+
+                    <li class="card-item">
+                      <p class="card-text">Setup instructions included</p>
+                    </li>
+                  </ul>
+
+                  <a
+                    href="https://github.com/SoccerAnalyticsML/Soccer-Analytics-with-Machine-Learning"
+                    class="btn btn-secondary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >OPEN REPO</a
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 
+        - #ACHIEVEMENT
+      -->
+
+        <section
+          class="section achievement achievement-text-only"
+          id="achievements"
+          aria-label="achievement"
+        >
+          <div class="container">
+            <p class="section-subtitle">Why This Book</p>
+
+            <h2 class="h2 section-title has-underline">
+              What makes it worth reading
+              <span class="span has-before"></span>
+            </h2>
+
+            <ul class="grid-list">
+              <li>
+                <div class="achievement-card text-card">
+                  <div class="card-content">
+                    <img
+                      src="./assets/images/award.svg"
+                      width="80"
+                      height="80"
+                      loading="lazy"
+                      alt="trophy"
+                      class="abs-img"
+                    />
+
+                    <h3 class="h3 card-title">Practical</h3>
+
+                    <p class="card-text">
+                      Built around real soccer analytics problems instead of
+                      abstract machine learning exercises.
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="achievement-card text-card">
+                  <div class="card-content">
+                    <img
+                      src="./assets/images/award.svg"
+                      width="80"
+                      height="80"
+                      loading="lazy"
+                      alt="trophy"
+                      class="abs-img"
+                    />
+
+                    <h3 class="h3 card-title">Comprehensive</h3>
+
+                    <p class="card-text">
+                      Covers Python, exploratory analysis, classification,
+                      regression, deep learning, and feature engineering.
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="achievement-card text-card">
+                  <div class="card-content">
+                    <img
+                      src="./assets/images/award.svg"
+                      width="80"
+                      height="80"
+                      loading="lazy"
+                      alt="trophy"
+                      class="abs-img"
+                    />
+
+                    <h3 class="h3 card-title">Applied</h3>
+
+                    <p class="card-text">
+                      Connects predictive models to decisions, evaluation,
+                      optimization, and real-world reasoning.
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="achievement-card text-card">
+                  <div class="card-content">
+                    <img
+                      src="./assets/images/award.svg"
+                      width="80"
+                      height="80"
+                      loading="lazy"
+                      alt="trophy"
+                      class="abs-img"
+                    />
+
+                    <h3 class="h3 card-title">Accessible</h3>
+
+                    <p class="card-text">
+                      Welcomes readers with basic programming familiarity, even
+                      without prior sports analytics experience.
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="achievement-card text-card">
+                  <div class="card-content">
+                    <img
+                      src="./assets/images/award.svg"
+                      width="80"
+                      height="80"
+                      loading="lazy"
+                      alt="trophy"
+                      class="abs-img"
+                    />
+
+                    <h3 class="h3 card-title">Supported</h3>
+
+                    <p class="card-text">
+                      Includes companion notebooks and supplementary materials
+                      so readers can follow along in code.
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="achievement-card text-card timely-card">
+                  <div class="card-content">
+                    <img
+                      src="./assets/images/2026_FIFA_World_Cup_emblem.svg"
+                      width="52"
+                      height="52"
+                      loading="lazy"
+                      alt="2026 FIFA World Cup logo"
+                      class="abs-img timely-badge"
+                    />
+                    <h3 class="h3 card-title">Timely</h3>
+
+                    <p class="card-text">
+                      Published ahead of the 2026 FIFA World Cup, when interest
+                      in soccer data and prediction is especially high.
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 
+        - #CONTACT
+      -->
+
+        <section class="section contact" id="contact" aria-label="contact">
+          <div class="container">
+            <p class="section-subtitle">Connect</p>
+
+            <h2 class="h2 section-title has-underline">
+              Learn more about the book
+              <span class="span has-before"></span>
+            </h2>
+
+            <div class="wrapper">
+              <form action="" class="contact-form">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  required
+                  class="input-field"
+                />
+
+                <input
+                  type="email"
+                  name="email_address"
+                  placeholder="Your Email"
+                  required
+                  class="input-field"
+                />
+
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="Subject"
+                  required
+                  class="input-field"
+                />
+
+                <textarea
+                  name="message"
+                  placeholder="Your Message"
+                  class="input-field"
+                ></textarea>
+
+                <button type="submit" class="btn btn-primary">
+                  Stay Updated
+                </button>
+              </form>
+
+              <ul class="contact-card">
+                <li>
+                  <p class="card-title">Book:</p>
+
+                  <address class="address">
+                    Soccer Analytics with Machine Learning <br />
+                    O'Reilly Media
+                  </address>
+                </li>
+
+                <li>
+                  <p class="card-title">Code:</p>
+
+                  <a
+                    href="https://github.com/SoccerAnalyticsML/Soccer-Analytics-with-Machine-Learning"
+                    class="card-link"
+                    >Official companion repository</a
+                  >
+                </li>
+
+                <li>
+                  <p class="social-list-title h3">Where to get it</p>
+
+                  <ul class="social-list">
+                    <li>
+                      <a
+                        href="https://www.amazon.com/Soccer-Analytics-Machine-Learning-Predictive/dp/1098181115"
+                        class="social-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ion-icon name="logo-facebook"></ion-icon>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a
+                        href="https://learning.oreilly.com/library/view/soccer-analytics-with/9781098181109/"
+                        class="social-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ion-icon name="logo-twitter"></ion-icon>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a
+                        href="https://www.linkedin.com/in/haipenggao/"
+                        class="social-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a
+                        href="https://github.com/SoccerAnalyticsML/Soccer-Analytics-with-Machine-Learning"
+                        class="social-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ion-icon name="logo-youtube"></ion-icon>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <!-- 
+    - #FOOTER
+  -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <a href="#" class="logo">Soccer Analytics with Machine Learning</a>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="copyright">
+            Promotional site content for Soccer Analytics with Machine Learning.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 
+    - custom js link
+  -->
+    <script src="./assets/js/script.js" defer></script>
+
+    <!-- 
+    - ionicon link
+  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
