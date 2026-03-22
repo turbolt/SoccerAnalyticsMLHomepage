@@ -66,12 +66,18 @@ addEventOnelem(window, "scroll", activeHeader);
 
 const tabCard = document.querySelectorAll("[data-tab-card]");
 
-let lastTabCard = tabCard[0];
-
 const navigateTab = function () {
-  lastTabCard.classList.remove("active");
-  this.classList.add("active");
-  lastTabCard = this;
+  const isActive = this.classList.contains("active");
+
+  for (let i = 0; i < tabCard.length; i++) {
+    tabCard[i].classList.remove("active");
+  }
+
+  if (!isActive) {
+    this.classList.add("active");
+  }
 }
 
-addEventOnelem(tabCard, "click", navigateTab);
+if (tabCard.length) {
+  addEventOnelem(tabCard, "click", navigateTab);
+}
