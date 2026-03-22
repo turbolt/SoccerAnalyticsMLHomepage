@@ -481,31 +481,39 @@ body {
   margin-inline: auto;
 }
 
-.hero-availability {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 34px;
-  padding: 0 14px;
-  margin-block: 0 10px;
-  border-radius: 999px;
-  background-color: hsla(145, 46%, 28%, 0.1);
-  border: 1px solid hsla(145, 46%, 28%, 0.12);
-  color: var(--chinese-violet);
-  font-size: 1.3rem;
-  font-weight: var(--fw-700);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.hero-badge {
+.hero-cover-context {
   position: absolute;
-  top: 14px;
+  top: -18px;
   right: 14px;
   z-index: 2;
-  margin: 0;
-  padding-inline: 16px;
-  box-shadow: 0 12px 24px hsla(145, 46%, 28%, 0.16);
+}
+
+.hero-cover-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px 8px 10px;
+  border-radius: 999px;
+  background: hsla(0, 0%, 100%, 0.92);
+  border: 1px solid hsla(145, 33%, 20%, 0.08);
+  box-shadow: 0 12px 24px hsla(145, 46%, 28%, 0.14);
+  backdrop-filter: blur(8px);
+}
+
+.hero-cover-logo {
+  width: 66px;
+  height: 66px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.hero-cover-note {
+  color: hsl(145, 18%, 34%);
+  font-size: 1.2rem;
+  font-weight: var(--fw-700);
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .hero-actions {
@@ -557,7 +565,7 @@ body {
   position: relative;
   display: block;
   border-radius: 18px 34px;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: var(--shadow-4);
   transition: transform var(--transition-2), box-shadow var(--transition-2);
 }
@@ -765,6 +773,83 @@ body {
 
 .tab-card.active .tab-text { display: none; }
 
+.author-preview-section .section-text {
+  max-width: 62ch;
+  margin-inline: auto;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.author-preview-section .tab-list {
+  flex-direction: column;
+  gap: 14px;
+}
+
+.author-preview-section .tab-card {
+  width: 100%;
+  max-width: none;
+  height: 72px;
+  place-content: stretch;
+  align-items: stretch;
+  background: linear-gradient(180deg, hsla(0, 0%, 100%, 0.96), hsla(120, 25%, 96%, 0.98));
+  border: 1px solid hsla(145, 33%, 20%, 0.08);
+  box-shadow: var(--shadow-2);
+}
+
+.author-preview-section .tab-card.active {
+  height: auto;
+  min-height: 320px;
+  max-width: none;
+}
+
+.author-preview-section .tab-text {
+  position: static;
+  transform: none;
+  padding: 0 24px;
+  text-align: left;
+  line-height: 72px;
+  white-space: normal;
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
+}
+
+.author-preview-panel {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+  height: 100%;
+  padding: 28px;
+  opacity: 0;
+  transition: var(--transition-2);
+}
+
+.tab-card.active .author-preview-panel { opacity: 1; }
+
+.author-preview-role {
+  color: var(--old-rose);
+  font-size: 1.2rem;
+  font-weight: var(--fw-700);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.author-preview-name {
+  margin-block-end: 4px;
+}
+
+.author-preview-text {
+  color: hsl(145, 18%, 34%);
+  font-size: 1.6rem;
+  line-height: 1.7;
+}
+
+.author-preview-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 6px;
+}
+
 
 
 
@@ -918,6 +1003,16 @@ body {
   padding: 26px;
 }
 
+.author-bio:not(:last-child) {
+  padding-bottom: 22px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid hsla(145, 33%, 20%, 0.08);
+}
+
+.author-bio .author-name {
+  margin-block-end: 12px;
+}
+
 
 
 
@@ -951,13 +1046,6 @@ body {
   opacity: 0.3;
 }
 
-.timely-card .timely-badge {
-  top: 12px;
-  right: 12px;
-  width: 48px;
-  height: auto;
-  opacity: 0.9;
-}
 .achievement-text-only .grid-list {
   gap: 20px;
 }
@@ -1157,6 +1245,10 @@ textarea.input-field {
   font-family: "Saira", sans-serif;
   font-size: 1.35rem;
   letter-spacing: 0.02em;
+}
+
+.copyright-prefix {
+  font-size: 1.25rem;
 }
 
 .hero-content,
@@ -1535,6 +1627,27 @@ textarea.input-field {
 
   .tab-card.active { max-width: 650px; }
 
+  .author-preview-section .tab-list {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .author-preview-section .tab-card {
+    height: 72px;
+    max-width: none;
+  }
+
+  .author-preview-section .tab-card.active {
+    min-height: 320px;
+    max-width: none;
+  }
+
+  .author-preview-section .tab-text {
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+    white-space: normal;
+  }
+
 
 
   /**
@@ -1650,6 +1763,11 @@ textarea.input-field {
   .tab-card { max-width: 75px; }
 
   .tab-card.active { max-width: 750px; }
+
+  .author-preview-section .tab-card,
+  .author-preview-section .tab-card.active {
+    max-width: none;
+  }
 
 
 
