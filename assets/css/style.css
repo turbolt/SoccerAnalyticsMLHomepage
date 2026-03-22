@@ -539,11 +539,15 @@ body {
 
 .hero-proof li {
   list-style: none;
+  height: 100%;
 }
 
 .hero-proof-link {
   display: grid;
+  align-content: start;
   gap: 2px;
+  height: 100%;
+  min-height: 100px;
   padding: 14px 16px;
   border-radius: 18px;
   background: hsla(0, 0%, 100%, 0.78);
