@@ -538,6 +538,10 @@ body {
 }
 
 .hero-proof li {
+  list-style: none;
+}
+
+.hero-proof-link {
   display: grid;
   gap: 2px;
   padding: 14px 16px;
@@ -545,6 +549,13 @@ body {
   background: hsla(0, 0%, 100%, 0.78);
   border: 1px solid hsla(32, 24%, 20%, 0.08);
   box-shadow: var(--shadow-2);
+  transition: transform var(--transition-1), box-shadow var(--transition-1), border-color var(--transition-1);
+}
+
+.hero-proof-link:is(:hover, :focus-visible) {
+  transform: translateY(-3px);
+  border-color: hsla(42, 76%, 44%, 0.28);
+  box-shadow: var(--shadow-3);
 }
 
 .hero-proof strong {
