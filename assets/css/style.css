@@ -20,16 +20,16 @@
    * colors
    */
 
-  --chinese-violet_30: hsla(145, 46%, 28%, 0.3);
-  --chinese-violet: hsl(145, 46%, 28%);
+  --chinese-violet_30: hsla(34, 58%, 30%, 0.3);
+  --chinese-violet: hsl(34, 58%, 30%);
   --sonic-silver: hsl(208, 7%, 46%);
-  --old-rose_30: hsla(125, 38%, 45%, 0.24);
-  --ghost-white: hsl(120, 25%, 94%);
-  --light-pink: hsl(122, 42%, 78%);
+  --old-rose_30: hsla(42, 76%, 44%, 0.22);
+  --ghost-white: hsl(42, 30%, 94%);
+  --light-pink: hsl(44, 62%, 78%);
   --light-gray: hsl(0, 0%, 88%);
-  --old-rose: hsl(132, 44%, 38%);
-  --seashell: hsl(100, 30%, 94%);
-  --charcoal: hsl(145, 33%, 20%);
+  --old-rose: hsl(42, 76%, 44%);
+  --seashell: hsl(42, 34%, 95%);
+  --charcoal: hsl(32, 24%, 20%);
   --white: hsl(0, 0%, 100%);
 
   /**
@@ -60,10 +60,10 @@
    * shadow
    */
 
-  --shadow-1: 0 12px 30px hsla(145, 33%, 20%, 0.08);
-  --shadow-2: 0 18px 40px hsla(145, 33%, 20%, 0.08);
-  --shadow-3: 0 10px 24px hsla(145, 46%, 28%, 0.16);
-  --shadow-4: 0 20px 48px hsla(145, 46%, 28%, 0.18);
+  --shadow-1: 0 12px 30px hsla(32, 24%, 20%, 0.08);
+  --shadow-2: 0 18px 40px hsla(32, 24%, 20%, 0.08);
+  --shadow-3: 0 10px 24px hsla(34, 58%, 30%, 0.16);
+  --shadow-4: 0 20px 48px hsla(34, 58%, 30%, 0.18);
 
   /**
    * radius
@@ -148,8 +148,10 @@ html {
 
 body {
   background:
-    radial-gradient(circle at top left, hsla(125, 38%, 45%, 0.12), transparent 25%),
-    linear-gradient(180deg, hsl(90, 25%, 97%) 0%, hsl(100, 30%, 95%) 100%);
+    radial-gradient(circle at top left, hsla(42, 72%, 58%, 0.12), transparent 24%),
+    radial-gradient(circle at 85% 10%, hsla(38, 68%, 46%, 0.08), transparent 22%),
+    radial-gradient(circle at 50% 100%, hsla(46, 80%, 62%, 0.06), transparent 28%),
+    linear-gradient(180deg, hsl(42, 45%, 99%) 0%, hsl(44, 34%, 97%) 52%, hsl(40, 28%, 95%) 100%);
   color: var(--sonic-silver);
   font-size: 1.6rem;
   line-height: 1.8;
@@ -182,7 +184,7 @@ body {
 
 .section { padding-block: var(--section-padding); }
 
-.section:nth-child(odd) { background-color: var(--seashell); }
+.section:nth-child(odd) { background-color: hsla(0, 0%, 100%, 0.42); }
 
 .section-subtitle {
   color: var(--old-rose);
@@ -226,7 +228,7 @@ body {
 .section-title { text-align: center; }
 
 .card-text {
-  color: hsl(145, 20%, 34%);
+  color: hsl(30, 16%, 34%);
 }
 
 .grid-list {
@@ -282,20 +284,20 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, hsl(132, 44%, 38%), hsl(145, 46%, 28%));
+  background: linear-gradient(135deg, hsl(42, 76%, 44%), hsl(34, 58%, 30%));
   color: var(--white);
   box-shadow: var(--shadow-3);
 }
 
 .btn-primary:is(:hover, :focus) {
-  background: linear-gradient(135deg, hsl(145, 46%, 28%), hsl(150, 52%, 24%));
+  background: linear-gradient(135deg, hsl(34, 58%, 30%), hsl(28, 54%, 24%));
   transform: translateY(-2px);
 }
 
 .hero-amazon-btn {
   background: hsla(0, 0%, 100%, 0.78);
   color: var(--chinese-violet);
-  border: 1px solid hsla(145, 33%, 20%, 0.12);
+  border: 1px solid hsla(32, 24%, 20%, 0.12);
   box-shadow: var(--shadow-2);
 }
 
@@ -306,12 +308,12 @@ body {
 }
 
 .hero-amazon-btn .hero-btn-logo {
-  background-color: hsla(145, 46%, 28%, 0.08);
-  border-color: hsla(145, 46%, 28%, 0.12);
+  background-color: hsla(34, 58%, 30%, 0.08);
+  border-color: hsla(34, 58%, 30%, 0.12);
 }
 
 .btn-secondary {
-  border: 1px solid hsla(145, 46%, 28%, 0.22);
+  border: 1px solid hsla(34, 58%, 30%, 0.22);
   color: var(--chinese-violet);
   background-color: hsla(0, 0%, 100%, 0.72);
 }
@@ -335,8 +337,8 @@ body {
 }
 
 .btn-secondary .hero-btn-logo {
-  background-color: hsla(145, 46%, 28%, 0.08);
-  border-color: hsla(145, 46%, 28%, 0.12);
+  background-color: hsla(34, 58%, 30%, 0.08);
+  border-color: hsla(34, 58%, 30%, 0.12);
 }
 
 .hero-btn-icon {
@@ -373,7 +375,7 @@ body {
   left: 10px;
   padding-block: 12px;
   z-index: 4;
-  border: 1px solid hsla(145, 33%, 20%, 0.08);
+  border: 1px solid hsla(32, 24%, 20%, 0.08);
   border-radius: 999px;
   transition: var(--transition-2);
 }
@@ -472,44 +474,48 @@ body {
   gap: 60px;
 }
 
-.hero .hero-title { margin-block: 10px 25px; }
+.hero .hero-title {
+  font-size: 2.8rem;
+  max-width: 12ch;
+  margin: 10px auto 25px;
+}
 
 .hero .section-text {
   font-size: 2rem;
-  color: hsl(145, 18%, 34%);
+  color: hsl(30, 16%, 34%);
   max-width: 34ch;
   margin-inline: auto;
 }
 
 .hero-cover-context {
   position: absolute;
-  top: -18px;
-  right: 14px;
+  top: -12px;
+  right: 10px;
   z-index: 2;
 }
 
 .hero-cover-mark {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 12px 8px 10px;
+  gap: 6px;
+  padding: 7px 10px 7px 8px;
   border-radius: 999px;
   background: hsla(0, 0%, 100%, 0.92);
-  border: 1px solid hsla(145, 33%, 20%, 0.08);
-  box-shadow: 0 12px 24px hsla(145, 46%, 28%, 0.14);
+  border: 1px solid hsla(32, 24%, 20%, 0.08);
+  box-shadow: 0 12px 24px hsla(34, 58%, 30%, 0.14);
   backdrop-filter: blur(8px);
 }
 
 .hero-cover-logo {
-  width: 66px;
-  height: 66px;
+  width: 48px;
+  height: 48px;
   object-fit: contain;
   flex-shrink: 0;
 }
 
 .hero-cover-note {
-  color: hsl(145, 18%, 34%);
-  font-size: 1.2rem;
+  color: hsl(30, 16%, 34%);
+  font-size: 1.1rem;
   font-weight: var(--fw-700);
   line-height: 1.2;
   letter-spacing: 0.08em;
@@ -536,7 +542,7 @@ body {
   padding: 14px 16px;
   border-radius: 18px;
   background: hsla(0, 0%, 100%, 0.78);
-  border: 1px solid hsla(145, 33%, 20%, 0.08);
+  border: 1px solid hsla(32, 24%, 20%, 0.08);
   box-shadow: var(--shadow-2);
 }
 
@@ -547,7 +553,7 @@ body {
 }
 
 .hero-proof span {
-  color: hsl(145, 18%, 38%);
+  color: hsl(30, 14%, 38%);
   font-size: 1.35rem;
 }
 
@@ -572,7 +578,7 @@ body {
 
 .hero-banner a:is(:hover, :focus-visible) {
   transform: translateY(-4px);
-  box-shadow: 0 24px 56px hsla(145, 46%, 28%, 0.22);
+  box-shadow: 0 24px 56px hsla(34, 58%, 30%, 0.22);
 }
 
 .hero-banner::before {
@@ -627,7 +633,7 @@ body {
   height: 100%;
   padding: 28px;
   background: hsla(0, 0%, 100%, 0.82);
-  border: 1px solid hsla(145, 33%, 20%, 0.08);
+  border: 1px solid hsla(32, 24%, 20%, 0.08);
   box-shadow: var(--shadow-2);
   border-radius: var(--radius-10);
   overflow: hidden;
@@ -667,13 +673,13 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg, hsla(0, 0%, 100%, 0.95), hsla(120, 20%, 97%, 0.98));
+  background: linear-gradient(180deg, hsla(0, 0%, 100%, 0.95), hsla(42, 20%, 97%, 0.98));
   max-width: max-content;
   width: 58px;
   min-height: 58px;
   padding: 10px 14px;
   border-radius: 16px;
-  border: 1px solid hsla(145, 33%, 20%, 0.08);
+  border: 1px solid hsla(32, 24%, 20%, 0.08);
   box-shadow: var(--shadow-2);
   transition: var(--transition-1);
 }
@@ -713,7 +719,7 @@ body {
   height: 100%;
   background-color: hsla(0, 0%, 100%, 0.88);
   padding: 28px;
-  border: 1px solid hsla(145, 33%, 20%, 0.08);
+  border: 1px solid hsla(32, 24%, 20%, 0.08);
   border-radius: var(--radius-10);
   box-shadow: var(--shadow-2);
   transition: var(--transition-2);
@@ -791,8 +797,8 @@ body {
   height: 72px;
   place-content: stretch;
   align-items: stretch;
-  background: linear-gradient(180deg, hsla(0, 0%, 100%, 0.96), hsla(120, 25%, 96%, 0.98));
-  border: 1px solid hsla(145, 33%, 20%, 0.08);
+  background: linear-gradient(180deg, hsla(0, 0%, 100%, 0.96), hsla(42, 25%, 96%, 0.98));
+  border: 1px solid hsla(32, 24%, 20%, 0.08);
   box-shadow: var(--shadow-2);
 }
 
@@ -819,8 +825,8 @@ body {
   align-content: start;
   height: 100%;
   padding: 28px;
-  opacity: 0;
   transition: var(--transition-2);
+  opacity: 0;
 }
 
 .tab-card.active .author-preview-panel { opacity: 1; }
@@ -838,7 +844,7 @@ body {
 }
 
 .author-preview-text {
-  color: hsl(145, 18%, 34%);
+  color: hsl(30, 16%, 34%);
   font-size: 1.6rem;
   line-height: 1.7;
 }
@@ -861,7 +867,7 @@ body {
 .pricing-card {
   padding: 38px 34px;
   background-color: hsla(0, 0%, 100%, 0.9);
-  border: 1px solid hsla(145, 33%, 20%, 0.08);
+  border: 1px solid hsla(32, 24%, 20%, 0.08);
   border-radius: var(--radius-10);
   text-align: center;
   position: relative;
@@ -879,7 +885,7 @@ body {
   position: absolute;
   inset: 0 0 auto;
   height: 4px;
-  background: linear-gradient(90deg, hsla(125, 38%, 45%, 0.2), hsla(145, 46%, 28%, 0.55));
+  background: linear-gradient(90deg, hsla(42, 76%, 44%, 0.22), hsla(34, 58%, 30%, 0.55));
 }
 
 .pricing-card .price {
@@ -899,7 +905,7 @@ body {
   padding: 0 12px;
   margin-bottom: 16px;
   border-radius: 999px;
-  background-color: hsla(125, 38%, 45%, 0.12);
+  background-color: hsla(42, 76%, 44%, 0.12);
   color: var(--chinese-violet);
   font-size: 1.2rem;
   font-weight: var(--fw-700);
@@ -922,8 +928,8 @@ body {
   width: 38px;
   height: 38px;
   border-radius: 999px;
-  background-color: hsla(145, 46%, 28%, 0.09);
-  border: 1px solid hsla(145, 33%, 20%, 0.08);
+  background-color: hsla(34, 58%, 30%, 0.09);
+  border: 1px solid hsla(32, 24%, 20%, 0.08);
   overflow: hidden;
 }
 
@@ -934,12 +940,12 @@ body {
 }
 
 .pricing-card.bundle {
-  background: linear-gradient(180deg, hsla(0, 0%, 100%, 0.98), hsla(120, 25%, 96%, 0.98));
-  border-color: hsla(125, 38%, 45%, 0.2);
+  background: linear-gradient(180deg, hsla(0, 0%, 100%, 0.98), hsla(42, 25%, 96%, 0.98));
+  border-color: hsla(42, 76%, 44%, 0.2);
 }
 
 .pricing-card.bundle .pricing-kicker {
-  background-color: hsla(132, 44%, 38%, 0.16);
+  background-color: hsla(42, 76%, 44%, 0.16);
   color: var(--old-rose);
 }
 
@@ -949,7 +955,7 @@ body {
 
 .pricing-card .card-text {
   padding-block: 12px;
-  color: hsl(145, 18%, 34%);
+  color: hsl(30, 16%, 34%);
 }
 
 .pricing-card .btn {
@@ -1006,7 +1012,7 @@ body {
 .author-bio:not(:last-child) {
   padding-bottom: 22px;
   margin-bottom: 22px;
-  border-bottom: 1px solid hsla(145, 33%, 20%, 0.08);
+  border-bottom: 1px solid hsla(32, 24%, 20%, 0.08);
 }
 
 .author-bio .author-name {
@@ -1025,7 +1031,7 @@ body {
 
 .achievement-card {
   background-color: hsla(0, 0%, 100%, 0.84);
-  border: 1px solid hsla(145, 33%, 20%, 0.08);
+  border: 1px solid hsla(32, 24%, 20%, 0.08);
   box-shadow: var(--shadow-2);
   overflow: hidden;
   height: 100%;
@@ -1090,14 +1096,14 @@ body {
   padding: 16px 18px;
   margin-block-end: 15px;
   outline: none;
-  border: 1px solid hsla(145, 33%, 20%, 0.12);
+  border: 1px solid hsla(32, 24%, 20%, 0.12);
   border-radius: 16px;
   box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.6);
 }
 
 .input-field:focus {
   border-color: var(--old-rose);
-  box-shadow: 0 0 0 4px hsla(125, 38%, 45%, 0.12);
+  box-shadow: 0 0 0 4px hsla(42, 76%, 44%, 0.12);
 }
 
 textarea.input-field {
@@ -1110,9 +1116,9 @@ textarea.input-field {
 .contact-form .btn { margin-inline: auto; }
 
 .contact-card {
-  background: linear-gradient(180deg, hsla(0, 0%, 100%, 0.95), hsla(100, 30%, 95%, 0.96));
+  background: linear-gradient(180deg, hsla(0, 0%, 100%, 0.95), hsla(42, 30%, 95%, 0.96));
   padding: 34px;
-  border: 1px solid hsla(145, 33%, 20%, 0.08);
+  border: 1px solid hsla(32, 24%, 20%, 0.08);
   border-radius: var(--radius-10);
   box-shadow: var(--shadow-2);
 }
@@ -1140,7 +1146,7 @@ textarea.input-field {
 
 .newsletter-card .section-text {
   max-width: 62ch;
-  color: hsl(145, 18%, 34%);
+  color: hsl(30, 16%, 34%);
 }
 
 .newsletter-card .card-text:last-child {
@@ -1160,7 +1166,7 @@ textarea.input-field {
 }
 
 .newsletter-note {
-  color: hsl(145, 16%, 42%);
+  color: hsl(30, 12%, 42%);
   font-size: 1.35rem;
 }
 
@@ -1241,7 +1247,7 @@ textarea.input-field {
 .footer-bottom { padding-block: 20px; }
 
 .copyright {
-  color: hsl(145, 18%, 38%);
+  color: hsl(30, 14%, 38%);
   font-family: "Saira", sans-serif;
   font-size: 1.35rem;
   letter-spacing: 0.02em;
@@ -1441,8 +1447,33 @@ textarea.input-field {
 
   .hero .section-subtitle { text-align: left; }
 
+  .hero .hero-title {
+    font-size: var(--fs-2);
+    max-width: none;
+    margin-inline: 0;
+  }
+
   .hero .section-text {
     margin-inline: 0;
+  }
+
+  .hero-cover-context {
+    top: -18px;
+    right: 14px;
+  }
+
+  .hero-cover-mark {
+    gap: 8px;
+    padding: 8px 12px 8px 10px;
+  }
+
+  .hero-cover-logo {
+    width: 66px;
+    height: 66px;
+  }
+
+  .hero-cover-note {
+    font-size: 1.2rem;
   }
 
   .hero-actions {
