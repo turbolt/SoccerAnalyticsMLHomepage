@@ -276,69 +276,77 @@ body {
   justify-content: center;
   gap: 12px;
   min-height: 54px;
-  padding: 12px 28px;
-  border-radius: 999px;
+  padding: 15px 25px;
+  border-radius: 15px;
+  border: 1px solid transparent;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
   font-weight: var(--fw-700);
-  letter-spacing: 0.02em;
-  transition: transform var(--transition-1), background-color var(--transition-1), color var(--transition-1), box-shadow var(--transition-1);
+  letter-spacing: 0.01em;
+  box-shadow: 4px 8px 19px -3px hsla(32, 24%, 20%, 0.2);
+  transition: color 250ms ease, transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0;
+  border-radius: inherit;
+  z-index: -1;
+  transition: width 250ms ease;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, hsl(42, 76%, 44%), hsl(34, 58%, 30%));
-  color: var(--white);
-  box-shadow: var(--shadow-3);
+  background: hsl(42, 32%, 92%);
+  color: hsl(32, 24%, 18%);
+  border-color: hsla(34, 58%, 30%, 0.18);
 }
 
-.btn-primary:is(:hover, :focus) {
+.btn-primary::before {
   background: linear-gradient(135deg, hsl(34, 58%, 30%), hsl(28, 54%, 24%));
-  transform: translateY(-2px);
 }
 
-.hero-amazon-btn {
-  background: hsla(0, 0%, 100%, 0.78);
-  color: var(--chinese-violet);
-  border: 1px solid hsla(32, 24%, 20%, 0.12);
-  box-shadow: var(--shadow-2);
-}
-
-.hero-amazon-btn:is(:hover, :focus) {
-  background: var(--white);
-  color: var(--charcoal);
-  transform: translateY(-2px);
-}
-
-.hero-amazon-btn .hero-btn-logo {
-  background-color: hsla(34, 58%, 30%, 0.08);
-  border-color: hsla(34, 58%, 30%, 0.12);
-}
-
+.hero-amazon-btn,
 .btn-secondary {
-  border: 1px solid hsla(34, 58%, 30%, 0.22);
-  color: var(--chinese-violet);
-  background-color: hsla(0, 0%, 100%, 0.72);
+  background-color: hsl(0, 0%, 96%);
+  border-color: hsla(34, 58%, 30%, 0.18);
+  color: hsl(32, 24%, 18%);
 }
 
-.btn-secondary:is(:hover, :focus) {
-  background-color: var(--white);
-  transform: translateY(-2px);
+.hero-amazon-btn::before,
+.btn-secondary::before {
+  background: hsl(32, 24%, 18%);
 }
 
 .hero-btn-logo {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 34px;
-  height: 26px;
+  min-width: 36px;
+  height: 28px;
   padding-inline: 8px;
-  border-radius: 8px;
+  border-radius: 10px;
   background-color: hsla(0, 0%, 100%, 0.2);
-  border: 1px solid hsla(0, 0%, 100%, 0.26);
+  border: 1px solid hsla(0, 0%, 100%, 0.16);
   overflow: hidden;
 }
 
+.hero-amazon-btn .hero-btn-logo,
 .btn-secondary .hero-btn-logo {
   background-color: hsla(34, 58%, 30%, 0.08);
-  border-color: hsla(34, 58%, 30%, 0.12);
+  border-color: hsla(34, 58%, 30%, 0.08);
+}
+
+.btn:is(:hover, :focus-visible) {
+  color: hsl(42, 40%, 94%);
+  transform: translateY(-0.335rem);
+  box-shadow: 0 18px 30px -8px hsla(32, 24%, 20%, 0.28);
+}
+
+.btn:is(:hover, :focus-visible)::before {
+  width: 100%;
 }
 
 .hero-btn-icon {
@@ -478,14 +486,17 @@ body {
 .hero .hero-title {
   font-size: 2.45rem;
   max-width: 17ch;
-  margin: 10px auto 25px;
+  margin: 10px auto 22px;
+  letter-spacing: -0.03em;
+  line-height: 1.04;
 }
 
 .hero .section-text {
-  font-size: 2rem;
+  font-size: 1.95rem;
   color: hsl(30, 16%, 34%);
   max-width: 34ch;
   margin-inline: auto;
+  line-height: 1.65;
 }
 
 .hero-cover-context {
@@ -501,10 +512,10 @@ body {
   gap: 6px;
   padding: 7px 10px 7px 8px;
   border-radius: 999px;
-  background: hsla(0, 0%, 100%, 0.92);
+  background: hsla(0, 0%, 100%, 0.94);
   border: 1px solid hsla(32, 24%, 20%, 0.08);
-  box-shadow: 0 12px 24px hsla(34, 58%, 30%, 0.14);
-  backdrop-filter: blur(8px);
+  box-shadow: 0 16px 34px hsla(34, 58%, 30%, 0.14);
+  backdrop-filter: blur(12px);
 }
 
 .hero-cover-logo {
@@ -528,7 +539,18 @@ body {
   flex-wrap: wrap;
   gap: 14px;
   justify-content: center;
-  margin-block: 28px 26px;
+  margin-block: 30px 28px;
+}
+
+.hero-actions .btn {
+  min-height: 0;
+  padding: 8px;
+  border-radius: 15px;
+  letter-spacing: 0.01em;
+}
+
+.hero-actions .btn:is(:hover, :focus-visible) {
+  transform: translateY(-0.335rem);
 }
 
 .hero-proof {
@@ -545,32 +567,64 @@ body {
 .hero-proof-link {
   display: grid;
   align-content: start;
-  gap: 2px;
+  gap: 8px;
   height: 100%;
-  min-height: 100px;
-  padding: 14px 16px;
-  border-radius: 18px;
-  background: hsla(0, 0%, 100%, 0.78);
+  min-height: 108px;
+  padding: 18px 20px;
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, hsla(0, 0%, 100%, 0.96), hsla(42, 28%, 97%, 0.92));
   border: 1px solid hsla(32, 24%, 20%, 0.08);
-  box-shadow: var(--shadow-2);
-  transition: transform var(--transition-1), box-shadow var(--transition-1), border-color var(--transition-1);
+  box-shadow: 0 16px 34px hsla(32, 24%, 20%, 0.08);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-1), box-shadow var(--transition-1), border-color var(--transition-1), background-color var(--transition-1);
+}
+
+.hero-proof-link::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  background: linear-gradient(90deg, hsla(42, 76%, 44%, 0.16), hsla(34, 58%, 30%, 0.42));
+}
+
+.hero-proof-link::after {
+  content: "\2192";
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  color: hsla(34, 58%, 30%, 0.28);
+  font-size: 1.8rem;
+  line-height: 1;
+  transition: transform var(--transition-1), color var(--transition-1);
 }
 
 .hero-proof-link:is(:hover, :focus-visible) {
-  transform: translateY(-3px);
-  border-color: hsla(42, 76%, 44%, 0.28);
-  box-shadow: var(--shadow-3);
+  transform: translateY(-5px);
+  border-color: hsla(42, 76%, 44%, 0.26);
+  box-shadow: 0 22px 42px hsla(32, 24%, 20%, 0.12);
+}
+
+.hero-proof-link:is(:hover, :focus-visible)::after {
+  transform: translateX(2px);
+  color: hsla(34, 58%, 30%, 0.48);
 }
 
 .hero-proof strong {
   color: var(--charcoal);
-  font-size: 1.8rem;
+  font-size: 1.65rem;
   font-weight: var(--fw-700);
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+  max-width: 12ch;
 }
 
 .hero-proof span {
   color: hsl(30, 14%, 38%);
-  font-size: 1.35rem;
+  font-size: 1.32rem;
+  line-height: 1.5;
+  max-width: 22ch;
 }
 
 .hero-banner {
@@ -900,35 +954,43 @@ body {
 \*-----------------------------------*/
 
 .pricing-card {
-  padding: 38px 34px;
-  background-color: hsla(0, 0%, 100%, 0.9);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 42px 34px 36px;
+  background:
+    linear-gradient(180deg, hsla(0, 0%, 100%, 0.98), hsla(42, 18%, 97%, 0.94));
   border: 1px solid hsla(32, 24%, 20%, 0.08);
   border-radius: var(--radius-10);
   text-align: center;
   position: relative;
   overflow: hidden;
-  transition: var(--transition-2);
+  box-shadow: 0 18px 36px hsla(32, 24%, 20%, 0.06);
+  transition: transform var(--transition-2), box-shadow var(--transition-2), border-color var(--transition-2);
 }
 
 .pricing-card:is(:hover, :focus-within),
 .pricing-card.bundle { box-shadow: var(--shadow-4); }
 
-.pricing-card:is(:hover, :focus-within) { transform: translateY(-8px); }
+.pricing-card:is(:hover, :focus-within) {
+  transform: translateY(-10px);
+  border-color: hsla(42, 76%, 44%, 0.2);
+}
 
 .pricing-card::before {
   content: "";
   position: absolute;
   inset: 0 0 auto;
-  height: 4px;
-  background: linear-gradient(90deg, hsla(42, 76%, 44%, 0.22), hsla(34, 58%, 30%, 0.55));
+  height: 3px;
+  background: linear-gradient(90deg, hsla(42, 76%, 44%, 0.15), hsla(34, 58%, 30%, 0.42));
 }
 
 .pricing-card .price {
   font-family: var(--ff-philosopher);
-  font-size: 4.8rem;
+  font-size: 5.2rem;
   color: var(--charcoal);
   font-weight: var(--fw-700);
-  margin-block: 8px 4px;
+  margin-block: 10px 6px;
   letter-spacing: -0.04em;
 }
 
@@ -938,13 +1000,13 @@ body {
   justify-content: center;
   min-height: 32px;
   padding: 0 12px;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   border-radius: 999px;
-  background-color: hsla(42, 76%, 44%, 0.12);
+  background-color: hsla(42, 76%, 44%, 0.1);
   color: var(--chinese-violet);
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: var(--fw-700);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
@@ -953,7 +1015,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
 
 .brand-badge {
@@ -963,8 +1025,8 @@ body {
   width: 38px;
   height: 38px;
   border-radius: 999px;
-  background-color: hsla(34, 58%, 30%, 0.09);
-  border: 1px solid hsla(32, 24%, 20%, 0.08);
+  background-color: hsla(34, 58%, 30%, 0.08);
+  border: 1px solid hsla(32, 24%, 20%, 0.06);
   overflow: hidden;
 }
 
@@ -975,8 +1037,10 @@ body {
 }
 
 .pricing-card.bundle {
-  background: linear-gradient(180deg, hsla(0, 0%, 100%, 0.98), hsla(42, 25%, 96%, 0.98));
-  border-color: hsla(42, 76%, 44%, 0.2);
+  background:
+    linear-gradient(180deg, hsla(0, 0%, 100%, 1), hsla(42, 30%, 95%, 0.98));
+  border-color: hsla(42, 76%, 44%, 0.22);
+  box-shadow: 0 24px 46px hsla(34, 58%, 30%, 0.12);
 }
 
 .pricing-card.bundle .pricing-kicker {
@@ -984,17 +1048,22 @@ body {
   color: var(--old-rose);
 }
 
-.pricing-card-list { margin-block: 22px 34px; }
+.pricing-card-list {
+  margin-block: 24px 34px;
+  text-align: left;
+}
 
 .pricing-card-list .card-item:not(:last-child) { border-block-end: 1px solid var(--ghost-white); }
 
 .pricing-card .card-text {
-  padding-block: 12px;
+  padding-block: 14px;
   color: hsl(30, 16%, 34%);
+  line-height: 1.65;
 }
 
 .pricing-card .btn {
   width: 100%;
+  margin-top: auto;
   margin-inline: auto;
 }
 
