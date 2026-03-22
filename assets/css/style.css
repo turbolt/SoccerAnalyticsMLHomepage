@@ -793,7 +793,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.tab-card.active .tab-text { display: none; }
+.tab-card.active .tab-heading { display: none; }
 
 .author-preview-section .section-text {
   max-width: 62ch;
@@ -824,12 +824,20 @@ body {
   max-width: none;
 }
 
+.tab-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 72px;
+  padding: 12px 24px;
+}
+
 .author-preview-section .tab-text {
   position: static;
   transform: none;
-  padding: 0 24px;
+  padding: 0;
   text-align: left;
-  line-height: 72px;
+  line-height: 1.2;
   white-space: normal;
   writing-mode: horizontal-tb;
   text-orientation: mixed;
@@ -857,6 +865,17 @@ body {
 
 .author-preview-name {
   margin-block-end: 4px;
+}
+
+.author-preview-title {
+  color: hsl(30, 10%, 48%);
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.author-preview-title-body {
+  margin-top: -6px;
 }
 
 .author-preview-text {
