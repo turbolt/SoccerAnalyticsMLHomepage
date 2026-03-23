@@ -345,25 +345,6 @@ body {
   background: linear-gradient(135deg, hsl(45, 78%, 62%), hsl(40, 82%, 50%));
 }
 
-.hero-btn-logo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 36px;
-  height: 28px;
-  padding-inline: 8px;
-  border-radius: 10px;
-  background-color: hsla(0, 0%, 100%, 0.2);
-  border: 1px solid hsla(0, 0%, 100%, 0.16);
-  overflow: hidden;
-}
-
-.hero-amazon-btn .hero-btn-logo,
-.btn-secondary .hero-btn-logo {
-  background-color: hsla(34, 58%, 30%, 0.08);
-  border-color: hsla(34, 58%, 30%, 0.08);
-}
-
 .btn:is(:hover, :focus-visible) {
   color: hsl(42, 40%, 94%);
   transform: translateY(-0.335rem);
@@ -393,14 +374,6 @@ body {
   animation: cta-sheen 2.8s ease-in-out infinite;
 }
 
-.hero-actions .cta-glow-btn:first-child::after {
-  animation-delay: 0s;
-}
-
-.hero-actions .cta-glow-btn:last-child::after {
-  animation-delay: 1.4s;
-}
-
 @keyframes cta-sheen {
   0% {
     left: -55%;
@@ -420,12 +393,6 @@ body {
     animation: none;
     opacity: 0.35;
   }
-}
-
-.hero-btn-icon {
-  width: 16px;
-  height: 16px;
-  object-fit: contain;
 }
 
 .img-holder {
@@ -608,28 +575,77 @@ body {
 }
 
 .hero-actions {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 14px;
-  justify-content: center;
+  justify-items: center;
   margin-block: 30px 28px;
 }
 
-.hero-actions .btn {
-  min-height: 0;
-  padding: 8px;
-  border-radius: 15px;
-  letter-spacing: 0.01em;
+.hero-availability-label {
+  color: hsl(30, 16%, 34%);
+  font-size: 1.5rem;
+  font-weight: var(--fw-700);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.hero-actions .btn:is(:hover, :focus-visible) {
-  transform: translateY(-0.335rem);
+.hero-retailers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  width: min(100%, 560px);
+}
+
+.hero-retailer-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 108px;
+  padding: 20px 24px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, hsla(0, 0%, 100%, 0.98), hsla(42, 22%, 97%, 0.94));
+  border: 1px solid hsla(32, 24%, 20%, 0.08);
+  box-shadow: 0 16px 34px hsla(32, 24%, 20%, 0.08);
+  transition: transform 250ms ease, filter 250ms ease, opacity 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+}
+
+.hero-retailer-link:is(:hover, :focus-visible) {
+  transform: translateY(-4px);
+  filter: saturate(1.04);
+  opacity: 0.96;
+  border-color: hsla(42, 76%, 44%, 0.24);
+  box-shadow: 0 22px 42px hsla(32, 24%, 20%, 0.12);
+}
+
+.hero-retailer-logo {
+  display: block;
+  width: 148px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.hero-retailer-logo--amazon {
+  width: 154px;
+}
+
+.hero-retailer-logo--oreilly {
+  width: 150px;
+}
+
+.hero-retailer-logo--barnes {
+  width: 156px;
+}
+
+.hero-retailer-logo--target {
+  width: 70px;
 }
 
 .hero-proof {
   display: grid;
-  gap: 14px;
-  margin-top: 10px;
+  gap: 16px;
+  margin-top: 18px;
 }
 
 .hero-proof li {
@@ -640,15 +656,15 @@ body {
 .hero-proof-link {
   display: grid;
   align-content: start;
-  gap: 8px;
+  gap: 10px;
   height: 100%;
   min-height: 0;
-  padding: 16px;
-  border-radius: 24px;
+  padding: 18px 18px 20px;
+  border-radius: 26px;
   background:
-    linear-gradient(180deg, hsla(0, 0%, 100%, 0.96), hsla(42, 28%, 97%, 0.92));
+    linear-gradient(180deg, hsla(0, 0%, 100%, 0.98), hsla(42, 30%, 97%, 0.94));
   border: 1px solid hsla(32, 24%, 20%, 0.08);
-  box-shadow: 0 16px 34px hsla(32, 24%, 20%, 0.08);
+  box-shadow: 0 18px 38px hsla(32, 24%, 20%, 0.08);
   position: relative;
   overflow: hidden;
   transition: transform var(--transition-1), box-shadow var(--transition-1), border-color var(--transition-1), background-color var(--transition-1);
@@ -657,18 +673,20 @@ body {
 .hero-proof-link::before {
   content: "";
   position: absolute;
-  inset: 0 0 auto;
-  height: 2px;
-  background: linear-gradient(90deg, hsla(42, 76%, 44%, 0.16), hsla(34, 58%, 30%, 0.42));
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, hsla(42, 78%, 56%, 0.18), transparent 36%),
+    linear-gradient(180deg, hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0));
+  pointer-events: none;
 }
 
 .hero-proof-link::after {
-  content: none;
+  content: "\2192";
   position: absolute;
   right: 18px;
   top: 18px;
-  color: hsla(34, 58%, 30%, 0.28);
-  font-size: 1.8rem;
+  color: hsla(34, 58%, 30%, 0.24);
+  font-size: 1.6rem;
   line-height: 1;
   transition: transform var(--transition-1), color var(--transition-1);
 }
@@ -684,19 +702,34 @@ body {
   color: hsla(34, 58%, 30%, 0.48);
 }
 
+.hero-proof-kicker {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  width: fit-content;
+  padding-inline: 10px;
+  border-radius: 999px;
+  background-color: hsla(42, 76%, 44%, 0.1);
+  color: hsl(32, 24%, 28%);
+  font-size: 1.05rem;
+  font-weight: var(--fw-700);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .hero-proof strong {
   color: var(--charcoal);
-  font-size: 1.5rem;
+  font-size: 1.48rem;
   font-weight: var(--fw-700);
-  line-height: 1.28;
+  line-height: 1.34;
   letter-spacing: -0.01em;
   max-width: none;
 }
 
-.hero-proof span {
+.hero-proof-link > span:not(.hero-proof-kicker) {
   color: hsl(30, 14%, 38%);
-  font-size: 1.22rem;
-  line-height: 1.5;
+  font-size: 1.2rem;
+  line-height: 1.6;
   max-width: none;
 }
 
@@ -1083,32 +1116,6 @@ body {
   text-transform: uppercase;
 }
 
-.pricing-brand {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 4px;
-}
-
-.brand-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 999px;
-  background-color: hsla(34, 58%, 30%, 0.08);
-  border: 1px solid hsla(32, 24%, 20%, 0.06);
-  overflow: hidden;
-}
-
-.brand-icon {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-}
-
 .pricing-card.bundle {
   background:
     linear-gradient(180deg, hsla(0, 0%, 100%, 1), hsla(42, 30%, 95%, 0.98));
@@ -1138,6 +1145,66 @@ body {
   width: 100%;
   margin-top: auto;
   margin-inline: auto;
+}
+
+.retailer-choice-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: auto;
+  align-items: center;
+}
+
+.retailer-choice-list--single {
+  grid-template-columns: 1fr;
+}
+
+.retailer-choice {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 78px;
+  padding: 14px 12px;
+  transition: transform var(--transition-1), opacity var(--transition-1), filter var(--transition-1);
+}
+
+.retailer-choice--plain {
+  background: none;
+  border: 0;
+  box-shadow: none;
+}
+
+.retailer-choice:is(:hover, :focus-visible) {
+  transform: translateY(-3px);
+  opacity: 0.9;
+  filter: saturate(1.04);
+}
+
+.retailer-choice-logo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.retailer-choice-logo--amazon {
+  width: 94px;
+}
+
+.retailer-choice-logo--barnes {
+  width: 100px;
+}
+
+.retailer-choice-logo--target {
+  width: 40px;
+}
+
+.retailer-choice-logo--oreilly {
+  width: 120px;
+}
+
+.retailer-choice-logo--github {
+  width: 126px;
 }
 
 
@@ -1660,6 +1727,10 @@ textarea.input-field {
   }
 
   .hero-actions {
+    justify-items: start;
+  }
+
+  .hero-retailers {
     justify-content: flex-start;
   }
 
@@ -1681,7 +1752,7 @@ textarea.input-field {
     max-width: 12ch;
   }
 
-  .hero-proof span {
+  .hero-proof-link > span:not(.hero-proof-kicker) {
     font-size: 1.32rem;
     max-width: 22ch;
   }
