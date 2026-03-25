@@ -1603,7 +1603,7 @@ textarea.input-field {
 .footer-bottom {
   display: grid;
   justify-items: center;
-  gap: 10px;
+  gap: 2px;
   padding-block: 28px 30px;
 }
 
@@ -1637,18 +1637,17 @@ textarea.input-field {
 }
 
 .footer-note {
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: center;
+  display: grid;
+  justify-items: center;
   gap: 8px;
+  margin-bottom: 24px;
   color: hsl(30, 14%, 38%);
   font-size: 1.28rem;
   line-height: 1.6;
 }
 
 .footer-note .footer-brand {
-  align-self: baseline;
+  align-self: center;
 }
 
 .footer-copyline {
