@@ -1576,6 +1576,7 @@ textarea.input-field {
 .footer {
   background-color: transparent;
   text-align: center;
+  font-family: "Saira", sans-serif;
 }
 
 .footer-top {
@@ -1599,7 +1600,30 @@ textarea.input-field {
 
 .footer-link:is(:hover, :focus) { color: var(--old-rose); }
 
-.footer-bottom { padding-block: 20px; }
+.footer-bottom {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  padding-block: 28px 30px;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-1), opacity var(--transition-1);
+}
+
+.footer-brand:is(:hover, :focus-visible) {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.footer-brand-logo {
+  width: min(94px, 27vw);
+  height: auto;
+  object-fit: contain;
+}
 
 .copyright {
   color: hsl(30, 14%, 38%);
@@ -1610,6 +1634,27 @@ textarea.input-field {
 
 .copyright-prefix {
   font-size: 1.25rem;
+}
+
+.footer-note {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+  color: hsl(30, 14%, 38%);
+  font-size: 1.28rem;
+  line-height: 1.6;
+}
+
+.footer-note .footer-brand {
+  align-self: baseline;
+}
+
+.footer-copyline {
+  color: hsl(30, 14%, 38%);
+  font-size: 1.22rem;
+  letter-spacing: 0.02em;
 }
 
 .hero-content,
