@@ -1480,7 +1480,48 @@ textarea.input-field {
 
 .newsletter-card {
   display: grid;
-  gap: 20px;
+  gap: 24px;
+  align-items: center;
+  padding: 30px;
+  overflow: hidden;
+}
+
+.newsletter-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 100%;
+  padding-block: 8px;
+}
+
+.newsletter-visual::before {
+  content: "";
+  position: absolute;
+  width: min(82%, 240px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, hsla(44, 78%, 66%, 0.24) 0%, hsla(42, 76%, 44%, 0.08) 48%, transparent 72%);
+  filter: blur(2px);
+  z-index: -1;
+}
+
+.newsletter-cover-image {
+  width: clamp(190px, 42vw, 250px);
+  max-width: 100%;
+  max-height: 380px;
+  object-fit: contain;
+  border-radius: 14px 30px;
+  box-shadow:
+    0 28px 48px -18px hsla(34, 58%, 30%, 0.35),
+    0 12px 22px -16px hsla(32, 24%, 20%, 0.28);
+}
+
+.newsletter-content {
+  display: grid;
+  gap: 18px;
+  align-content: center;
+  max-width: 620px;
 }
 
 .newsletter-wrapper {
@@ -1492,6 +1533,10 @@ textarea.input-field {
   width: 100%;
 }
 
+.newsletter-embed {
+  width: 100%;
+}
+
 .newsletter-form {
   display: grid;
   gap: 12px;
@@ -1500,7 +1545,7 @@ textarea.input-field {
 }
 
 .newsletter-card .section-text {
-  max-width: 62ch;
+  max-width: 34ch;
   color: hsl(30, 16%, 34%);
 }
 
@@ -1521,8 +1566,15 @@ textarea.input-field {
 }
 
 .newsletter-note {
-  color: hsl(30, 12%, 42%);
+  width: fit-content;
+  max-width: 100%;
+  padding: 10px 16px;
+  border: 1px solid hsla(34, 58%, 30%, 0.12);
+  border-radius: 999px;
+  background-color: hsla(42, 54%, 96%, 0.92);
+  color: hsl(30, 15%, 35%);
   font-size: 1.35rem;
+  line-height: 1.6;
 }
 
 .contact-card .card-title {
@@ -1995,6 +2047,19 @@ textarea.input-field {
     display: block;
   }
 
+  .newsletter-card {
+    grid-template-columns: minmax(210px, 250px) minmax(0, 1fr);
+    gap: 34px;
+  }
+
+  .newsletter-visual {
+    justify-content: center;
+  }
+
+  .newsletter-cover-image {
+    max-height: 400px;
+  }
+
   .newsletter-form {
     grid-template-columns: 1fr auto;
     align-items: center;
@@ -2212,6 +2277,16 @@ textarea.input-field {
 
   .contact .wrapper.newsletter-wrapper .newsletter-card {
     width: 100%;
+  }
+
+  .newsletter-card {
+    grid-template-columns: minmax(230px, 280px) minmax(0, 1fr);
+    gap: 46px;
+    padding: 38px 40px;
+  }
+
+  .newsletter-cover-image {
+    max-height: 430px;
   }
 
   .contact-form { padding: 40px; }
