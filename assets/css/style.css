@@ -112,8 +112,7 @@ span,
 data,
 input,
 button,
-textarea,
-ion-icon { display: block; }
+textarea { display: block; }
 
 a {
   color: inherit;
@@ -136,8 +135,6 @@ textarea { width: 100%; }
 button { cursor: pointer; }
 
 address { font-style: normal; }
-
-ion-icon { pointer-events: none; }
 
 html {
   font-family: var(--ff-poppins);
@@ -243,6 +240,11 @@ body {
   align-items: center;
   gap: 5px;
   transition: var(--transition-1);
+}
+
+.btn-link-arrow {
+  font-size: 1.4rem;
+  line-height: 1;
 }
 
 .btn-link:is(:hover, :focus) { color: var(--chinese-violet); }
@@ -465,7 +467,11 @@ body {
   color: var(--charcoal);
 }
 
-.nav-toggle-btn ion-icon { --ionicon-stroke-width: 20px; }
+.nav-toggle-btn .icon-label {
+  font-size: inherit;
+  font-weight: var(--fw-700);
+  line-height: 1;
+}
 
 .nav-toggle-btn.active .open,
 .nav-toggle-btn .close { display: none; }
