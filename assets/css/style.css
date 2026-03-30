@@ -460,24 +460,46 @@ body {
   color: var(--charcoal);
   line-height: 1.12;
   max-width: 16ch;
+  min-width: 0;
 }
 
 .nav-toggle-btn {
-  font-size: 40px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  padding: 0;
   color: var(--charcoal);
 }
 
-.nav-toggle-btn .icon-label {
-  font-size: inherit;
-  font-weight: var(--fw-700);
-  line-height: 1;
+.nav-toggle-icon {
+  display: grid;
+  gap: 5px;
 }
 
-.nav-toggle-btn.active .open,
-.nav-toggle-btn .close { display: none; }
+.nav-toggle-line {
+  width: 22px;
+  height: 2px;
+  border-radius: 999px;
+  background-color: currentColor;
+  transition: transform var(--transition-1), opacity var(--transition-1), background-color var(--transition-1);
+}
 
-.nav-toggle-btn .open,
-.nav-toggle-btn.active .close { display: block; }
+.nav-toggle-btn:is(:hover, :focus-visible) {
+  color: var(--old-rose);
+}
+
+.nav-toggle-btn.active .nav-toggle-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle-btn.active .nav-toggle-line:nth-child(2) { opacity: 0; }
+
+.nav-toggle-btn.active .nav-toggle-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
 
 .navbar {
   position: absolute;
